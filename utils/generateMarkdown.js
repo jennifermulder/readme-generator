@@ -1,8 +1,7 @@
 //add badge here based on conditional
-// function licenseBadge(license) {
-//   if (license === MIT) {
-
-// }
+function licenseBadge(license) {
+  return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`
+}
 
 // function to generate markdown for README
 function generateMarkdown(data) {
@@ -19,7 +18,7 @@ ${data.description}
 
 * [Usage](#usage)
 
-${(data.license)}
+* [License](#license)
 
 * [Contributing](#contributing)
 

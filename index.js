@@ -2,7 +2,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 
 const generateMarkdown = require('./utils/generateMarkdown.js');
-const path = ('./utils/generatemarkdown');
+const path = require('path');
 var license = [];
 
 
@@ -65,7 +65,15 @@ const promptUser = () => {
             type: 'list',
             name: 'license',
             message: 'What kind of license should be used?',
-            choices: ['MIT', 'GPL', 'Apache', 'BSD', 'LGPL']
+            choices: ['MIT', 'GPL', 'Apache', 'BSD', 'LGPL'],
+            validate: licenseInput => {
+                if (licenseInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your project license!');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
@@ -125,31 +133,24 @@ const promptUser = () => {
 
 // // function to write README file
 function writeToFile(fileName, data) {
+    //write file in path created from current working directory
     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
-
 // // ****function to initialize program
-function init(promptUser) {
-    writeToFile("README.md", generateMarkdown({ ...readmeData }));
-
-}
-
-
-
-// // ****function call to initialize program
-init(promptUser)
-    //pass user input into generateMarkdown js
+function init(){
+    promptUser()
     .then(readmeData => {
-        return generateMarkdown(readmeData);
-    })
-    .then(pagemd => {
-        return 
+        return writeToFile("sampleREADME.md", generateMarkdown({ ...readmeData }))
     })
     .catch(err => {
         console.log(err);
-});
+    });
+}
 
+// // ****function call to initialize program
+init();
+    
 // //call function
 // promptUser()
 //
@@ -163,6 +164,3 @@ init(promptUser)
 //   console.log(writeFileResponse);
 // })
 // 
-
-
-
