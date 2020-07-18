@@ -37,8 +37,8 @@ const promptUser = () => {
         },
         {
             type: 'input',
-            name: 'project',
-            message: 'What is your project repository name?',
+            name: 'title',
+            message: 'What is your project name?',
             validate: projectInput => {
                 if (projectInput) {
                     return true;
@@ -50,40 +50,21 @@ const promptUser = () => {
         },
         {
             type: 'input',
-            name: 'purpose',
-            message: 'What is the purpose of your project?',
-            validate: purposeInput => {
-                if (purposeInput) {
+            name: 'description',
+            message: 'What is a short description of your project?',
+            validate: descriptionInput => {
+                if (descriptionInput) {
                     return true;
                 } else {
-                    console.log('Please enter your project purpose!');
+                    console.log('Please enter your project description!');
                     return false;
                 }
             }
-        },
-        {
-            type: 'input',
-            name: 'features',
-            message: 'What are the features of your project?',
-            validate: featuresInput => {
-                if (featuresInput) {
-                    return true;
-                } else {
-                    console.log('Please enter your project features!');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'checkbox',
-            name: 'languages',
-            message: 'What did you this project with? (Check all that apply)',
-            choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
         },
         {
             type: 'list',
             name: 'license',
-            message: 'What license should be used?',
+            message: 'What kind of license should be used?',
             choices: ['MIT', 'GPL', 'Apache', 'BSD', 'LGPL']
         },
         {
@@ -126,18 +107,6 @@ const promptUser = () => {
             }
         },
         {
-            type: 'confirm',
-            name: 'confirmEnchancements',
-            message: 'Are there any planned enhancements to be documented for a "Planned Enhancements" section?',
-            default: true
-        },
-        {
-            type: 'input',
-            name: 'enhancements',
-            message: 'Provide some information about enhancements:',
-            when: ({ confirmEnchancements }) => confirmEnchancements
-        },
-        {
             type: 'input',
             name: 'contribution',
             message: 'What does the user need to know about contributing to the repo?',
@@ -150,26 +119,8 @@ const promptUser = () => {
                 }
             }
         },
-        {
-            type: 'confirm',
-            name: 'confirmAbout',
-            message: 'Would you like to enter some information about yourself for an "About" section?',
-            default: true
-        },
-        {
-            type: 'input',
-            name: 'about',
-            message: 'Provide some information about yourself:',
-            when: ({ confirmAbout }) => confirmAbout
-        }
     ]);
 };
-
-
-
-
-
-
 
 
 // // function to write README file
@@ -177,12 +128,12 @@ const promptUser = () => {
 // }
 function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-  }
+}
 
-  
+
 // // ****function to initialize program
 // function init() {
-    writeToFile("README.md", generateMarkdown({...inquirerResponses}));
+writeToFile("README.md", generateMarkdown({ ...inquirerResponses }));
 
 // }
 

@@ -18,22 +18,35 @@ ${licenseBadge(data.license)}
 
 ## Description
 
+${data.description}
+
 ## Table of Contents
 
 * [Installation](#installation)
 
 * [Usage](#usage)
 
+${(data.license)}
+
+* [Contributing](#contributing)
+
+* [Tests](#tests)
+
+* [Questions](#questions)
 
 ## Installation
 
+To install necessary dependencies, run the following command:
+
+${data.install}
+
 ## Usage
+
+${data.usage}
 
 ## License
 
-This project is based under the ${data.license} license.
-
-## Enhancements
+This project is licensed under the ${data.license} license.
 
 ## Contributing
 
