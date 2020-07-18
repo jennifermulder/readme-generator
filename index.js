@@ -124,23 +124,31 @@ const promptUser = () => {
 
 
 // // function to write README file
-// function writeToFile(fileName, data) {
-// }
 function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
 
 // // ****function to initialize program
-// function init() {
-writeToFile("README.md", generateMarkdown({ ...inquirerResponses }));
+function init(promptUser) {
+    writeToFile("README.md", generateMarkdown({ ...readmeData }));
 
-// }
+}
 
 
 
 // // ****function call to initialize program
-// init();
+init(promptUser)
+    //pass user input into generateMarkdown js
+    .then(readmeData => {
+        return generateMarkdown(readmeData);
+    })
+    .then(pagemd => {
+        return 
+    })
+    .catch(err => {
+        console.log(err);
+});
 
 // //call function
 // promptUser()
@@ -154,9 +162,7 @@ writeToFile("README.md", generateMarkdown({ ...inquirerResponses }));
 // .then(writeFileResponse => {
 //   console.log(writeFileResponse);
 // })
-// .catch(err => {
-//   console.log(err);
-// });
+// 
 
 
 

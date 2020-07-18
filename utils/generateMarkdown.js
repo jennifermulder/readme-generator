@@ -1,16 +1,9 @@
+//add badge here based on conditional
 // function licenseBadge(license) {
-//   if (license)
+//   if (license === MIT) {
+
 // }
 
-const generateEnhancements = enhancementsText => {
-  if (!enhancmentsText) {
-    return '';
-  }
-
-  return `
-    ${enhancementsText}
-  `;
-};
 // function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
