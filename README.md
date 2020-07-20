@@ -1,49 +1,20 @@
-# jenn
-![GitHub license](https://img.shields.io/badge/license-GPL-blue.svg)
+# **README Generator**
 
-## Description
+![](assets/images/Leeyo - RevPro - Revenue Accounting Automation.mp4)
 
-description
+## **Purpose**
+To provide the user with an efficient solution to producing a professional README by simply answering questions when prompted from the command line.
 
-## Table of Contents
+## **Features** 
+When the user calls the program, they are presented with questions regarding their GitHub user name, contact information and other projects details including name, description, and license. A high-quality, professional README.md is then generated with the title of the project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions. A badge depicting the license that the project is covered under is also shown at the top of the README. The Table of Contents is equipt with links for easy access to each of the applicable sections.
 
-* [Installation](#installation)
+## Built With
+* HTML
+* JavaScript
+* Node JS - (packages include file system and inquirer)
 
-* [Usage](#usage)
+## Website
+https://jennifermulder.github.io/readme-generator/
 
-GPL
-
-* [Contributing](#contributing)
-
-* [Tests](#tests)
-
-* [Questions](#questions)
-
-## Installation
-
-To install necessary dependencies, run the following command:
-
-node inde
-
-## Usage
-
-stuff
-
-## License
-
-This project is licensed under the GPL license.
-
-## Contributing
-
-stuff 
-
-## Tests
-
-To run tests, run the following command:
-
-node test
-
-## Questions
-
-For any questions, contact: jenn.email
-
+## Contribution
+Created by Jennifer Mulder
