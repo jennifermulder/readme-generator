@@ -1,7 +1,10 @@
 # **README Generator**
 
-<iframe src="https://drive.google.com/file/d/1yjV-ds8We-1xDf9jeIC43Jt16lWsn0hU/preview" width="640" height="480"></iframe>
+![](assets/images/readme-generator.jpg)
 
+## Tutorial
+
+https://drive.google.com/file/d/1yjV-ds8We-1xDf9jeIC43Jt16lWsn0hU/view
 
 ## **Purpose**
 To provide the user with an efficient solution to producing a professional README by simply answering questions when prompted from the command line.
