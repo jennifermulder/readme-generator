@@ -1,4 +1,4 @@
-//add badge here based on conditional
+//add badge here using user input for license
 function licenseBadge(license) {
   return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`
 }

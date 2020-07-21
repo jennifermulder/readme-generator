@@ -3,8 +3,6 @@ const inquirer = require('inquirer');
 
 const generateMarkdown = require('./utils/generateMarkdown.js');
 const path = require('path');
-var license = [];
-
 
 //question object
 const promptUser = () => {
@@ -131,13 +129,13 @@ const promptUser = () => {
 };
 
 
-// // function to write README file
+// function to write README file using location and generateMarkdown template
 function writeToFile(fileName, data) {
     //write file in path created from current working directory
     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
-// // ****function to initialize program
+// function to initialize program
 function init(){
     promptUser()
     .then(readmeData => {
@@ -148,19 +146,5 @@ function init(){
     });
 }
 
-// // ****function call to initialize program
+// function call to initialize program
 init();
-    
-// //call function
-// promptUser()
-//
-// .then(portfolioData => {
-//   return generateMarkdown(portfolioData);
-// })
-// .then(pageHTML => {
-//   return writeFile(pageHTML);
-// })
-// .then(writeFileResponse => {
-//   console.log(writeFileResponse);
-// })
-// 
