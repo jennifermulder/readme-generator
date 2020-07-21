@@ -17,8 +17,5 @@ When the user calls the program, they are presented with questions regarding the
 * JavaScript
 * Node JS - (packages include file system and inquirer)
 
-## Website
-https://jennifermulder.github.io/readme-generator/
-
 ## Contribution
 Created by Jennifer Mulder
